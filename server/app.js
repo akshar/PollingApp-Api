@@ -3,18 +3,25 @@
  */
 
 
-var path = require('path');
+import express from 'express'
+import db from 'sequelize-connect'
 
-var express = require('express');
 
-const app = express();
+async function connect () {
+    await db.connect('andvote_schema','admin','root')
 
-    app.get('*',function (req,res) {
-        res.send("hello");
-    });
+}
 
-const port =3000;
-    app.listen(port,()=> console.log('running on port'+port));
+(async function () {
+    await connect()
+    const app = express()
+    const port =3000
+    app.listen(port,()=> console.log('Running on port '+port))
+})()
+
+
+
+
 
 
 
