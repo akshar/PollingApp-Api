@@ -1,11 +1,8 @@
-	/**
- * Created by Rampage on 7/11/2016.
- */
-
-
 import express from 'express'
 import db from 'sequelize-connect'
 import path from 'path'
+import pollController from './controllers/pollController'
+import bodyParser from 'body-parser'
 
 
     async function demo() {
@@ -24,28 +21,16 @@ import path from 'path'
         console.log("An error occured connecting to database "+err);
     }
     const app = express()
-    const port =3000
+    app.use(bodyParser.json())
+    app.post('/api/poll',pollController.handlePost)
+    app.get('/api/poll/:pollId',pollController.handleGet)
+        const port =3000
     app.listen(port,()=> console.log('Running on port '+port))
 
 })()
 
 
-   /* var Connection 		= require('sequelize-connect');
 
-    var discover = [__dirname + '/models'];
-    var orm = new Connection(
-        'andvote_schema',
-        'root',
-        '',
-        {
-            dialect: "mysql",
-            port:    3306
-        },
-        discover,
-    )
-        .then(function(instance){
-            console.log("established")
-        });*/
 
 
 
