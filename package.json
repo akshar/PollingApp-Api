@@ -10,13 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0",
-    "mysql": "^2.11.1",
-    "sequelize": "^3.23.4",
-    "sequelize-connect": "^2.0.0"
+    "babel-polyfill": "^6.9.1",
+    "express": "^4.13.4",
+    "mysql": "^2.10.2",
+    "sequelize": "^3.22.0",
+    "sequelize-connect": "^1.2.2"
   },
-  "babel":{
-    "presets": ["node6","stage-3"]
-
+  "babel": {
+    "presets": [
+      "node6",
+      "stage-3"
+    ]
   }
 }
