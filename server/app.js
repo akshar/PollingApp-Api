@@ -11,7 +11,7 @@ import bodyParser from 'body-parser'
         db.matcher = function shouldImportModel (modelFileName) {
             return true
         }
-        await db.connect('andvote_schema', 'root', 'root',{force:true})
+        await db.connect('andvote_schema', 'root', 'root',{force:false})
     }
 
 
