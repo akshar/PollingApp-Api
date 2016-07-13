@@ -9,7 +9,7 @@ export default function createPollOptionModel (sequelize, DataTypes) {
         classMethods: {
             associate (models) {
                 pollOption.belongsTo(models.poll)
-                // pollOption.hasMany(models.vote)
+                pollOption.hasMany(models.vote)
             }
         }
     })
