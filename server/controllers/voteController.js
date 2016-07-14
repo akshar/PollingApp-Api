@@ -6,6 +6,7 @@ voteController.handlePost = async function(req,res,next){
 
     try{
     await db.models.vote.create({
+        voterIp:req.ip,
         pollOptionId:req.body.pollOptionId
         })
         res.sendStatus(201)
